@@ -1,0 +1,12 @@
+{
+    "id": "{8802236C-D872-3BF8-7EC3-37345CE41F8F}",
+    "name": "IPSViewCalendar",
+    "type": 3,
+    "vendor": "Brownson",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "IVCA",
+    "url": ""
+}
