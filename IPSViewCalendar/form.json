@@ -20,10 +20,10 @@
                             { "caption": "AllDay",      "name": "AllDay",      "width": "50px", "add": false,"edit": { "type": "CheckBox" } },
                             { "caption": "Color",       "name": "Color",       "width": "60px", "add": 255,  "edit": { "type": "SelectColor" } },
                             { "caption": "Description", "name": "Description", "width": "auto",  "add": "",   "edit": { "type": "ValidationTextBox" } },
-                            { "caption": "DateType",    "name": "RecuringDateType",        "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
-                            { "caption": "Interval",    "name": "RecuringDateInterval",    "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
-                            { "caption": "DateDay",     "name": "RecuringDateDay",         "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
-                            { "caption": "DayInterval", "name": "RecuringDateDayInterval", "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } }
+                            { "caption": "DateType",    "name": "RecurrenceDateType",        "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "Interval",    "name": "RecurrenceDateInterval",    "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "DateDay",     "name": "RecurrenceDateDay",         "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "DayInterval", "name": "RecurrenceDateDayInterval", "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } }
                           ]
 						}
 				   ],
