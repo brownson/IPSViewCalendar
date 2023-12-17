@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 class IPSViewCalendar extends IPSModule
 {
 	// -------------------------------------------------------------------------
@@ -55,11 +53,17 @@ class IPSViewCalendar extends IPSModule
 			}
 	   }
 	   IPS_SetProperty($this->InstanceID, 'Appointments',  json_encode($newAppointments));
-	   IPS_ApplyChanges($this->InstanceID);
+	   IPS_ApplyChanges($this->InstanceID);    
+    
+    return true;
 	}
 
 	// -------------------------------------------------------------------------
-	public function CreateAppointment($name, $year1, $month1, $day1, $hour1, $minute1, $year2, $month2, $day2, $hour2, $minute2, $isAllDay, $color, $description) {
+	public function CreateAppointment($name, 
+	                                  $year1, $month1, $day1, $hour1, $minute1, 
+									  $year2, $month2, $day2, $hour2, $minute2, 
+									  $isAllDay, $color, $description, 
+									  $recuringDateType , $recuringDateInterval, $recuringDateDay, $recuringDateDayInterval) {
 		$appointments     = json_decode($this->ReadPropertyString('Appointments'), true);
 
 		$maxID = 0;
@@ -70,13 +74,19 @@ class IPSViewCalendar extends IPSModule
 		$this->UpdateAppointment($id, $name, 
 		                         $year1, $month1, $day1, $hour1, $minute1, 
 		                         $year2, $month2, $day2, $hour2, $minute2, 
-								 $isAllDay, $color, $description);
+								 $isAllDay, $color, $description,
+								 $recuringDateType , $recuringDateInterval, $recuringDateDay, $recuringDateDayInterval);
 
 		return $id;
 	}
 	
 	// -------------------------------------------------------------------------
-	public function UpdateAppointment($id, $name, $year1, $month1, $day1, $hour1, $minute1, $year2, $month2, $day2, $hour2, $minute2, $isAllDay, $color, $description) {
+	public function UpdateAppointment($id, $name, 
+	                                  $year1, $month1, $day1, $hour1, $minute1, 
+									  $year2, $month2, $day2, $hour2, $minute2, 
+									  $isAllDay, $color, $description,
+									  $recuringDateType , $recuringDateInterval, $recuringDateDay, $recuringDateDayInterval
+									) {
 		$appointments     = json_decode($this->ReadPropertyString('Appointments'), true);
 
 		$newAppointments = [];
@@ -87,18 +97,24 @@ class IPSViewCalendar extends IPSModule
 	   	}
 
 	   	$newAppointments[] = [
-			'ID'          => $id,
-			'Name'        => $name,
-			'StartDate'   => "{\"year\": $year1, \"month\": $month1, \"day\": $day1 }",
-			'StartTime'   => "{\"hour\": $hour1, \"minute\": $minute1}",
-			'EndDate'     => "{\"year\": $year2, \"month\": $month2, \"day\": $day2 }",
-			'EndTime'     => "{\"hour\": $hour2, \"minute\": $minute2}",
-			'AllDay'      => $isAllDay,
-			'Color'       => $color,
-			'Description' => $description
+			'ID'                      => $id,
+			'Name'                    => $name,
+			'StartDate'               => "{\"year\": $year1, \"month\": $month1, \"day\": $day1 }",
+			'StartTime'               => "{\"hour\": $hour1, \"minute\": $minute1}",
+			'EndDate'                 => "{\"year\": $year2, \"month\": $month2, \"day\": $day2 }",
+			'EndTime'                 => "{\"hour\": $hour2, \"minute\": $minute2}",
+			'AllDay'                  => $isAllDay,
+			'Color'                   => $color,
+			'Description'             => $description,
+			'RecuringDateType'        => $recuringDateType , 
+			'RecuringDateInterval'    => $recuringDateInterval, 
+			'RecuringDateDay'         => $recuringDateDay, 
+			'RecuringDateDayInterval' => $recuringDateDayInterval
 	   	];
 
-	   	IPS_SetProperty($this->InstanceID, 'Appointments',  json_encode($newAppointments));
+    IPS_SetProperty($this->InstanceID, 'Appointments',  json_encode($newAppointments));
 		IPS_ApplyChanges($this->InstanceID);
-	}	
+    
+    return true;
+	}
 }

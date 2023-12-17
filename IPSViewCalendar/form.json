@@ -11,15 +11,19 @@
                           "onAdd": "IVCA_UpdateAppointments($id, $Appointments);",
                           "onEdit": "IVCA_UpdateAppointments($id, $Appointments);",
                           "columns": [ 
-                            { "caption": "ID",          "name": "ID",          "width": "100px", "add": 0, "save": true  }, 
+                            { "caption": "ID",          "name": "ID",          "width": "40px", "add": 0, "save": true  }, 
                             { "caption": "Name",        "name": "Name",        "width": "150px", "add": "New Event",   "edit": { "type": "ValidationTextBox" } }, 
-                            { "caption": "StartDate",   "name": "StartDate",   "width": "100px", "add": "{\"year\": 0, \"month\": 0, \"day\": 0}",   "edit": { "type": "SelectDate" } }, 
-                            { "caption": "StartTime",   "name": "StartTime",   "width": "100px", "add": "{\"hour\": 8, \"minute\": 0, \"second\": 0}",   "edit": { "type": "SelectTime" } }, 
-                            { "caption": "EndDate",     "name": "EndDate",     "width": "100px", "add": "{\"year\": 0, \"month\": 0, \"day\": 0}",    "edit": { "type": "SelectDate" } }, 
-                            { "caption": "EndTime",     "name": "EndTime",     "width": "100px", "add": "{\"hour\": 9, \"minute\": 0, \"second\": 0}",    "edit": { "type": "SelectTime" } }, 
-                            { "caption": "AllDay",      "name": "AllDay",      "width": "100px", "add": false,"edit": { "type": "CheckBox" } },
-                            { "caption": "Color",       "name": "Color",       "width": "100px", "add": 255,  "edit": { "type": "SelectColor" } },
-                            { "caption": "Description", "name": "Description", "width": "auto",  "add": "",   "edit": { "type": "ValidationTextBox" } }
+                            { "caption": "StartDate",   "name": "StartDate",   "width": "90px", "add": "{\"year\": 0, \"month\": 0, \"day\": 0}",   "edit": { "type": "SelectDate" } }, 
+                            { "caption": "StartTime",   "name": "StartTime",   "width": "90px", "add": "{\"hour\": 8, \"minute\": 0, \"second\": 0}",   "edit": { "type": "SelectTime" } }, 
+                            { "caption": "EndDate",     "name": "EndDate",     "width": "90px", "add": "{\"year\": 0, \"month\": 0, \"day\": 0}",    "edit": { "type": "SelectDate" } }, 
+                            { "caption": "EndTime",     "name": "EndTime",     "width": "90px", "add": "{\"hour\": 9, \"minute\": 0, \"second\": 0}",    "edit": { "type": "SelectTime" } }, 
+                            { "caption": "AllDay",      "name": "AllDay",      "width": "50px", "add": false,"edit": { "type": "CheckBox" } },
+                            { "caption": "Color",       "name": "Color",       "width": "60px", "add": 255,  "edit": { "type": "SelectColor" } },
+                            { "caption": "Description", "name": "Description", "width": "auto",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "DateType",    "name": "RecuringDateType",        "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "Interval",    "name": "RecuringDateInterval",    "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "DateDay",     "name": "RecuringDateDay",         "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } },
+                            { "caption": "DayInterval", "name": "RecuringDateDayInterval", "width": "80px",  "add": "",   "edit": { "type": "ValidationTextBox" } }
                           ]
 						}
 				   ],
