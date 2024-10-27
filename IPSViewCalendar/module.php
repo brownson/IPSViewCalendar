@@ -146,7 +146,7 @@ class IPSViewCalendar extends IPSModule
 			$eventEnd = mktime($hour2, $minute2, 0, $month2, $day2, $year2);
 
 			IPS_SetEventCyclic($eventID,  $recurrenceDateType, $recurrenceDateInterval, $recurrenceDateDay, $recurrenceDateDayInterval, 0, 0);
-			IPS_SetEventCyclicDateBounds($eventID, $eventStart, $eventEnd);
+			IPS_SetEventCyclicDateBounds($eventID, $eventStart, null);
 			IPS_SetEventCyclicTimeBounds($eventID, $eventStart, $eventEnd);
 			IPS_SetEventAction($EreignisID, "{7938A5A2-0981-5FE0-BE6C-8AA610D654EB}", []);
 			IPS_SetParent($eventID, $scriptID);
